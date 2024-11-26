@@ -46,7 +46,10 @@
 				<div class="card">
 					<div class="card-content">
 						<span class="card-title">Adicionar Convidado</span>
-						<form action="" method="post">
+						<form th:action="@{/eventos/{idEvento}(idEvento=${evento.id})}" method="post">
+							<div>
+								<input type="hidden" name="id" th:value="${convidado.id}" readonly="readonly">
+							</div>
 							<div>
 								<label>Nome: </label> <input type="text" name="nome" th:value="${convidado.nome}">
 							</div>

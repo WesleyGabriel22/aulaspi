@@ -47,7 +47,7 @@ public class EventosController {
 	}
 
 	@GetMapping("/{id}")
-	public ModelAndView detalhar(@PathVariable Long id) {
+	public ModelAndView detalhar(@PathVariable Long id, Convidado convidado) {
 		ModelAndView md = new ModelAndView();
 		Optional<Evento> opt = er.findById(id);
 		if (opt.isEmpty()) {
@@ -67,7 +67,7 @@ public class EventosController {
 	@PostMapping("/{idEvento}")
 	public String salvarConvidado(@PathVariable Long idEvento, Convidado convidado) {
 
-		System.out.println("Ide do evento: " + idEvento);
+		System.out.println("Id do evento: " + idEvento);
 		System.out.println(convidado);
 
 		Optional<Evento> opt = er.findById(idEvento);
